@@ -1,0 +1,45 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye 
+  - ask_pizza
+  - ask_pizza_types
+
+entities:
+  - pizza_type
+
+slots:
+  selected_pizza:
+    type: categorical
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: pizza_type
+    values:
+      - cheese
+      - pepperoni
+      - margherita
+      - hawaiian
+      - vegetarian
+      - vegan
+      - gluten-free
+      - bbq-chicken
+      - buffalo-chicken
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you? I can help you order a pizza. We have these pizza types: cheese, pepperoni, margherita, hawaiian, vegetarian, vegan, gluten-free, bbq-chicken, and buffalo-chicken."
+
+  utter_goodbye:
+  - text: "Bye, thanks for using my pizza ordering service."
+
+  utter_pizza_order:
+  - text: "Great choice. I can help you order a {selected_pizza} pizza."
+
+  utter_pizza_types:
+  - text: "We have these pizza types: cheese, pepperoni, margherita, hawaiian, vegetarian, vegan, gluten-free, bbq-chicken, and buffalo-chicken."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

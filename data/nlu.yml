@@ -1,0 +1,68 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi, I want to order a pizza
+    - hello, I would like to ask for a pizza
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: ask_pizza
+  examples: |
+    - I want a [cheese](pizza_type) pizza
+    - can I order a [pepperoni](pizza_type) pizza?
+    - I would like a [margherita](pizza_type)
+    - get me a [hawaiian](pizza_type) pizza
+    - I want to order [vegetarian](pizza_type)
+    - can you make it [vegan](pizza_type)?
+    - do you have [gluten-free](pizza_type) pizza?
+    - I want [bbq-chicken](pizza_type)
+    - I would like a [buffalo-chicken](pizza_type) pizza
+    - pizza [cheese](pizza_type), please
+    - order one [pepperoni](pizza_type)
+
+- intent: ask_pizza_types
+  examples: |
+    - what pizzas do you have?
+    - what types of pizza are available?
+    - which pizzas can I order?
+    - show me the pizza menu
+    - what kind of pizza do you sell?
+    - what are my pizza options?
+    - do you have a menu?
+    - tell me the available pizza types
+    - what flavors do you have?
+
+- lookup: pizza_type
+  examples: |
+    - cheese
+    - pepperoni
+    - margherita
+    - hawaiian
+    - vegetarian
+    - vegan
+    - gluten-free
+    - bbq-chicken
+    - buffalo-chicken

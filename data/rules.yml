@@ -1,0 +1,23 @@
+version: "3.1"
+
+rules:
+
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Confirm allowed pizza orders
+  steps:
+  - intent: ask_pizza
+  - action: utter_pizza_order
+
+- rule: Show available pizza types
+  steps:
+  - intent: ask_pizza_types
+  - action: utter_pizza_types
