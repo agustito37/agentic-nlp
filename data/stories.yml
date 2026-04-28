@@ -2,25 +2,25 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: regular path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_pizza_types
   - action: utter_pizza_types
   - intent: ask_pizza
-  - action: utter_pizza_order
+  - action: action_confirm_pizza_order
   - intent: goodbye
   - action: utter_goodbye
 
-- story: sad path 1
+- story: large path 1
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_pizza_types
   - action: utter_pizza_types
   - intent: ask_pizza
-  - action: utter_pizza_order
+  - action: action_confirm_pizza_order
   - intent: goodbye
   - action: utter_goodbye
 
@@ -29,13 +29,13 @@ stories:
   - intent: ask_pizza_types
   - action: utter_pizza_types
   - intent: ask_pizza
-  - action: utter_pizza_order
+  - action: action_confirm_pizza_order
   - intent: goodbye
   - action: utter_goodbye
 
-- story: fast path 2
+- story: fastest path 2
   steps:
   - intent: ask_pizza
-  - action: utter_pizza_order
+  - action: action_confirm_pizza_order
   - intent: goodbye
   - action: utter_goodbye

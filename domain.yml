@@ -8,6 +8,7 @@ intents:
 
 entities:
   - pizza_type
+  - pizza_quantity
 
 slots:
   selected_pizza:
@@ -26,19 +27,26 @@ slots:
       - gluten-free
       - bbq-chicken
       - buffalo-chicken
+  pizza_quantity:
+    type: float
+    initial_value: 1
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: pizza_quantity
 
 responses:
   utter_greet:
-  - text: "Hey! How are you? I can help you order a pizza. We have these pizza types: cheese, pepperoni, margherita, hawaiian, vegetarian, vegan, gluten-free, bbq-chicken, and buffalo-chicken."
+  - text: "Hello! I can help you order a pizza. We have these pizza types: cheese, pepperoni, margherita, hawaiian, vegetarian, vegan, gluten-free, bbq-chicken, and buffalo-chicken."
 
   utter_goodbye:
-  - text: "Bye, thanks for using my pizza ordering service."
-
-  utter_pizza_order:
-  - text: "Great choice. I can help you order a {selected_pizza} pizza."
+  - text: "Bye, thanks for using the pizza ordering service."
 
   utter_pizza_types:
   - text: "We have these pizza types: cheese, pepperoni, margherita, hawaiian, vegetarian, vegan, gluten-free, bbq-chicken, and buffalo-chicken."
+
+actions:
+  - action_confirm_pizza_order
 
 session_config:
   session_expiration_time: 60

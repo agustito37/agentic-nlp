@@ -15,7 +15,7 @@ rules:
 - rule: Confirm allowed pizza orders
   steps:
   - intent: ask_pizza
-  - action: utter_pizza_order
+  - action: action_confirm_pizza_order
 
 - rule: Show available pizza types
   steps:

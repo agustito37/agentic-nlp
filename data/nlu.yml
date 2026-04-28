@@ -28,20 +28,36 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - thanks
+    - thank you
+    - ty
 
 - intent: ask_pizza
   examples: |
     - I want a [cheese](pizza_type) pizza
+    - I want [1](pizza_quantity) [cheese](pizza_type) pizza
+    - I want [2](pizza_quantity) [cheese](pizza_type) pizzas
     - can I order a [pepperoni](pizza_type) pizza?
+    - can I order [3](pizza_quantity) [pepperoni](pizza_type) pizzas?
     - I would like a [margherita](pizza_type)
+    - I would like [two](pizza_quantity) [margherita](pizza_type) pizzas
     - get me a [hawaiian](pizza_type) pizza
+    - get me [4](pizza_quantity) [hawaiian](pizza_type) pizzas
     - I want to order [vegetarian](pizza_type)
+    - I want to order [one](pizza_quantity) [vegetarian](pizza_type) pizza
     - can you make it [vegan](pizza_type)?
+    - can you make [2](pizza_quantity) [vegan](pizza_type) pizzas?
     - do you have [gluten-free](pizza_type) pizza?
+    - do you have [3](pizza_quantity) [gluten-free](pizza_type) pizzas?
     - I want [bbq-chicken](pizza_type)
+    - I want [2](pizza_quantity) [bbq-chicken](pizza_type) pizzas
     - I would like a [buffalo-chicken](pizza_type) pizza
+    - I would like [5](pizza_quantity) [buffalo-chicken](pizza_type) pizzas
     - pizza [cheese](pizza_type), please
     - order one [pepperoni](pizza_type)
+    - order [one](pizza_quantity) [pepperoni](pizza_type)
+    - order [2](pizza_quantity) pizzas
+    - [3](pizza_quantity) [margherita](pizza_type) pizzas, please
 
 - intent: ask_pizza_types
   examples: |
@@ -66,3 +82,19 @@ nlu:
     - gluten-free
     - bbq-chicken
     - buffalo-chicken
+
+- regex: pizza_quantity
+  examples: |
+    - \b\d+\b
+
+- synonym: gluten-free
+  examples: |
+    - gluten free
+
+- synonym: bbq-chicken
+  examples: |
+    - bbq chicken
+
+- synonym: buffalo-chicken
+  examples: |
+    - buffalo chicken
